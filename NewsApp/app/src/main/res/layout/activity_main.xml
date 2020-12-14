@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+<!--LoadingBar,search,filter-->
+   <RelativeLayout
+       android:id="@+id/searchRl"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <ProgressBar
+           android:id="@+id/progressBar"
+           android:layout_width="20dp"
+           android:layout_height="20dp"
+           android:layout_centerVertical="true"
+           android:layout_marginStart="5dp"/>
+
+       <EditText
+           android:id="@+id/searchEt"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="5dp"
+           android:layout_toEndOf="@+id/progressBar"
+           android:hint="Search"
+           android:textColorHint="@color/colorGray2"
+           android:padding="8dp"
+           android:layout_toStartOf="@+id/filterBtn"
+           android:background="@drawable/shape_rect"
+           android:textColor="@color/colorBlack"/>
+       <ImageButton
+           android:id="@+id/filterBtn"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentEnd="true"
+           android:layout_marginEnd="5dp"
+           android:layout_centerVertical="true"
+           android:background="@android:color/transparent"
+           android:src="@drawable/ic_filter_black"/>
+
+   </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sourcesRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_source_list"></androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>
